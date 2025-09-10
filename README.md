@@ -1,9 +1,9 @@
 # @fatcherjs/middleware-exception
 
 <div align="center">
-  <a href="https://codecov.io/gh/fatcherjs/middleware-exception/branch/master">
-    <img src="https://codecov.io/gh/fatcherjs/middleware-exception/branch/master/graph/badge.svg?token=9DRTR2GXH8" alt="codecov">
-  </a>
+  <a href="https://codecov.io/github/fatcherjs/middleware-exception" > 
+    <img src="https://codecov.io/github/fatcherjs/middleware-exception/graph/badge.svg?token=X6W3TO6BE1"/> 
+ </a>
   <a href="https://www.jsdelivr.com/package/npm/@fatcherjs/middleware-exception">
     <img src="https://data.jsdelivr.com/v1/package/npm/@fatcherjs/middleware-exception/badge?style=rounded" alt="jsDelivr">
   </a>
@@ -15,9 +15,6 @@
   </a>
   <a href="https://npmjs.com/package/@fatcherjs/middleware-exception">
     <img src="https://img.shields.io/npm/v/@fatcherjs/middleware-exception.svg" alt="npm package">
-  </a>
-  <a href="https://nodejs.org/en/about/releases/">
-    <img src="https://img.shields.io/node/v/@fatcherjs/middleware-exception.svg" alt="node compatibility">
   </a>
   <a href="https://github.com/fatcherjs/middleware-exception/actions/workflows/ci.yml">
     <img src="https://github.com/fatcherjs/middleware-exception/actions/workflows/ci.yml/badge.svg?branch=master" alt="build status">
