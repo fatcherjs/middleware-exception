@@ -37,4 +37,4 @@ fatcher('https://foo.bar', { middlewares: [exception] }).catch(error => {
 
 ## License
 
-[MIT](https://github.com/fanhaoyuan/fatcher/blob/master/LICENSE)
+[MIT](https://github.com/fatcherjs/middleware-exception/blob/master/LICENSE)
