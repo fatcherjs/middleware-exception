@@ -20,6 +20,7 @@
     <img src="https://github.com/fatcherjs/middleware-exception/actions/workflows/ci.yml/badge.svg?branch=master" alt="build status">
   </a>
 </div>
+
 ## Install
 
 ### NPM
