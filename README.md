@@ -32,17 +32,55 @@
 ### CDN
 
 ```html
+<script src="https://cdn.jsdelivr.net/npm/fatcher/dist/fatcher.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fatcherjs/middleware-exception/dist/index.min.js"></script>
+
+<script>
+  Fatcher.fatcher('url', {
+    middlewares: [FatcherMiddlewareException],
+  })
+    .then(response => {
+      console.log(response);
+    })
+    .catch(err => {
+      if (FatcherMiddlewareException.isFatcherError(err)) {
+        // http error
+        return;
+      }
+      // other
+    });
+</script>
 ```
 
 ## Usage
 
-In the fetch api, all requests are considered successful. However, we generally consider a request with a response code of `200-299` to be successful.
-
 ```ts
-import { exception, fatcher, isFatcherError } from 'fatcher';
+import { fatcher } from 'fatcher';
+import { isFatcherError, exception } from '@fatcherjs/middleware-exception';
 
 fatcher('https://foo.bar', { middlewares: [exception] }).catch(error => {
+  if (isFatcherError(error)) {
+    // handle fatcher error
+    return;
+  }
+
+  // handle other error
+});
+```
+
+## options
+
+### validateCode
+
+```ts
+import { fatcher } from 'fatcher';
+import { isFatcherError, exception } from '@fatcherjs/middleware-exception';
+
+fatcher('https://foo.bar', {
+  middlewares: [exception],
+  // throw FatcherError when status is not 200
+  validateCode: status => status === 200,
+}).catch(error => {
   if (isFatcherError(error)) {
     // handle fatcher error
     return;
