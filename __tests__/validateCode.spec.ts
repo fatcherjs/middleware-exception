@@ -11,6 +11,10 @@ const server = setupServer(
 
     return HttpResponse.json({}, { status: Number(params.get('code'))! });
   }),
+
+  http.get('https://foo.bar/basic', () => {
+    return HttpResponse.json({ ok: true });
+  }),
 );
 
 beforeAll(() => server.listen());
@@ -18,6 +22,15 @@ afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
 describe('Validate Code', () => {
+  it('Request successfully with response ok', async () => {
+    const res = await fatcher('https:/foo.bar/basic', {
+      middlewares: [exception],
+    });
+
+    expect(res.status).toBe(200);
+    expect(res.ok).toBe(true);
+  });
+
   it('Request successfully with code 10001', async () => {
     const res = await fatcher('https://foo.bar/get?code=10001', {
       validateCode: code => code === 10001,
