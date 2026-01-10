@@ -27,7 +27,7 @@ describe('Fatcher Error Instance', () => {
       await fatcher('https://foo.bar/get?code=500', { middlewares: [exception] });
     } catch (error) {
       if (isFatcherError(error)) {
-        expect(error.snapshot.response.status).toBe(500);
+        expect(error.response.status).toBe(500);
       }
     }
   });
